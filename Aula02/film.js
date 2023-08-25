@@ -8,17 +8,12 @@ class Film {
         this.rate = null;
     }
 
-    searchFilmDuration(){
-        console.log(`O filme ${this.title} tem duração de ${this.duration}.`);
-    }
-
     listMovieAsWatched() {
         this.watched = true;
     }
 
     rateMovie(rate) {
         this.rate = rate;
-        console.log(`O filme ${this.title} recebeu nota ${this.rate}.`);
     }
 }
 
@@ -56,6 +51,22 @@ function markFilmAsWatched() {
     });
 }
 
+function rateFilm() {
+    rl.question('Enter the title of the movie you want to rate: ', title => {
+        const film = filmList.find(film => film.title === title);
+        if (film) {
+            rl.question('Enter the rate: ', rate => {
+                film.rateMovie(rate);
+                console.log(`${film.title} rated with ${film.rate}.`);
+                getMenuChoice();
+            });
+        } else {
+            console.log(`Movie with title '${title}' not found.`);
+            getMenuChoice();
+        }
+    });
+}
+
 const readline = require('readline');
 
 const rl = readline.createInterface({
@@ -79,17 +90,23 @@ function handleChoice(choice) {
         addFilmDetails();
         break;
     case '2':
-        markFilmAsWatched()
+        markFilmAsWatched();
         break;
     case '3':
-      console.log('You chose Option 3');
+      rateFilm();
       break;
     case '4':
-      console.log('Goodbye!');
+        console.log("--- Lista de filmes ---");
+        console.log(filmList);
+        getMenuChoice();
+        break;
+    case '5':
+      console.log('Exiting the program, Goodbye!');
       rl.close();
       break;
     default:
       console.log('Invalid choice. Please select a valid option.');
+      getMenuChoice();
       break;
   }
 }
