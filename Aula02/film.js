@@ -1,6 +1,6 @@
 class Film {
-    constructor(name, year, gender, duration){
-        this.name = name;
+    constructor(title, year, gender, duration){
+        this.title = title;
         this.year = year;
         this.gender = gender;
         this.duration = duration;
@@ -9,18 +9,51 @@ class Film {
     }
 
     searchFilmDuration(){
-        console.log(`O filme ${this.name} tem duração de ${this.duration}.`);
+        console.log(`O filme ${this.title} tem duração de ${this.duration}.`);
     }
 
     listMovieAsWatched() {
         this.watched = true;
-        console.log(`O filme ${this.name} foi assistido.`);
     }
 
     rateMovie(rate) {
         this.rate = rate;
-        console.log(`O filme ${this.name} recebeu nota ${this.rate}.`);
+        console.log(`O filme ${this.title} recebeu nota ${this.rate}.`);
     }
+}
+
+const filmList = [];
+
+function addFilm(title, year, gender, duration) {
+    const film = new Film(title, year, gender, duration);
+    filmList.push(film);
+    console.log(`${title} foi adicionado a lista de filmes.`);
+    getMenuChoice();
+  }
+
+function addFilmDetails() {
+    rl.question('Título: ', title => {
+        rl.question('Ano: ', year => {
+            rl.question('Gênero: ', gender => {
+                rl.question('Duração: ', duration => {
+                    addFilm(title, year, gender, duration)
+                });
+            });
+        });
+    });
+}
+
+function markFilmAsWatched() {
+    rl.question('Enter the title of the movie you want to mark as watched: ', title => {
+        const film = filmList.find(film => film.title === title);
+        if (film) {
+            film.listMovieAsWatched();
+            console.log(`${film.title} marked as watched.`);
+        } else {
+            console.log(`Movie with title '${title}' not found.`);
+        }
+        getMenuChoice();
+    });
 }
 
 const readline = require('readline');
@@ -30,7 +63,6 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-const filmList = [];
 
 function displayMenu() {
     console.log("Menu:");
@@ -44,11 +76,11 @@ function displayMenu() {
 function handleChoice(choice) {
   switch (choice) {
     case '1':
-      console.log('You chose Option 1');
-      break;
+        addFilmDetails();
+        break;
     case '2':
-      console.log('You chose Option 2');
-      break;
+        markFilmAsWatched()
+        break;
     case '3':
       console.log('You chose Option 3');
       break;
@@ -66,11 +98,7 @@ function getMenuChoice() {
   displayMenu();
   rl.question('Enter your choice: ', (choice) => {
     handleChoice(choice);
-    if (choice !== '4') {
-        getMenuChoice(); // Display menu again if the choice is not 'Exit'
-    0}
   });
 }
 
 getMenuChoice();
-
