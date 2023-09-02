@@ -1,4 +1,5 @@
 **Calculadora de IMC**
+
 Esta Calculadora de IMC (Índice de Massa Corporal) é uma aplicação web simples construída usando HTML, CSS, e JavaScript no framework Svelte. Permite aos utilizadores calcular o seu IMC e fornece uma mensagem com base na categoria de IMC.
 
 **Funcionalidades**
