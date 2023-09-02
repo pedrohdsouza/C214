@@ -9,7 +9,6 @@ Esta Calculadora de IMC (Índice de Massa Corporal) é uma aplicação web simpl
 - Design responsivo para diferentes tamanhos de ecrã.
 
 **Como Utilizar**
-- Abra o ficheiro index.html no seu navegador web ou aloje a aplicação num servidor web.
 
 - Insira a sua altura em metros e o seu peso em quilogramas nos campos de entrada correspondentes.
 
