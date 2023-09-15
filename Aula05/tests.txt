@@ -1,0 +1,53 @@
+Principais diferenças entre Testes Funcionais e Testes Não Funcionais
+
+1. Propósito:
+
+- Testes Funcionais: Esses testes se concentram em verificar se o software funciona de acordo com suas especificações e requisitos. Eles verificam se a aplicação executa suas tarefas pretendidas corretamente.
+
+- Testes Não Funcionais: Os testes não funcionais avaliam o desempenho, confiabilidade e outros atributos de qualidade do software, em vez de suas funcionalidades específicas.
+
+2. O Que Eles Testam:
+
+- Testes Funcionais: Esses testes verificam as funcionalidades e recursos específicos do software. Eles respondem a perguntas como "Ele faz o que é suposto fazer?"
+
+- Testes Não Funcionais: Os testes não funcionais avaliam aspectos como velocidade, escalabilidade, segurança, usabilidade e experiência geral do usuário. Eles respondem a perguntas como "Como ele se sai?" ou "Quão amigável é para o usuário?"
+
+3. Casos de Teste:
+
+- Testes Funcionais: Casos de teste são projetados com base nos requisitos funcionais e nas especificações fornecidas para o software.
+
+- Testes Não Funcionais: Casos de teste derivam dos requisitos não funcionais, que especificam o desempenho, a segurança e outros atributos de qualidade esperados do software.
+
+4. Exemplos:
+
+- Testes Funcionais: Testes de unidade, testes de integração, testes de sistema e testes de aceitação são exemplos de testes funcionais.
+
+- Testes Não Funcionais: Testes de desempenho (carga, estresse e escalabilidade), testes de segurança, testes de usabilidade e testes de confiabilidade são exemplos de testes não funcionais.
+
+5. Medindo o Sucesso:
+
+- Testes Funcionais: O sucesso é medido pela conformidade das funcionalidades do software com os requisitos definidos sem defeitos significativos.
+
+- Testes Não Funcionais: O sucesso é medido pelo cumprimento ou superação dos critérios não funcionais especificados, como tempo de resposta, padrões de segurança e satisfação do usuário.
+
+6. Automatização:
+
+- Testes Funcionais: Os testes funcionais são frequentemente altamente adequados para automação usando ferramentas como o Selenium para aplicativos da web ou o JUnit para aplicativos Java.
+
+- Testes Não Funcionais: Alguns testes não funcionais, como os de desempenho, também podem ser automatizados, mas podem exigir ferramentas e expertise especializados.
+
+7. Tempo:
+
+- Testes Funcionais: Esses testes são geralmente realizados no início do ciclo de desenvolvimento para garantir que as funcionalidades básicas estejam funcionando conforme o esperado.
+
+- Testes Não Funcionais: Os testes não funcionais são frequentemente realizados mais tarde no ciclo de desenvolvimento, após os testes funcionais, para avaliar os atributos de qualidade do software.
+
+8. Dependências:
+
+- Testes Funcionais: Esses testes são menos dependentes da infraestrutura e do ambiente subjacentes, concentrando-se principalmente nas operações lógicas do software.
+
+- Testes Não Funcionais: Os testes não funcionais frequentemente dependem muito do ambiente, das condições de rede e de outros fatores externos que podem afetar os atributos de qualidade.
+
+Em resumo, os testes funcionais garantem que as funcionalidades pretendidas do software funcionem corretamente, 
+enquanto os testes não funcionais avaliam o desempenho, a confiabilidade e a experiência do usuário do software. 
+Ambos os tipos de testes são essenciais para fornecer um produto de software de alta qualidade que atenda às expectativas e requisitos do usuário.
