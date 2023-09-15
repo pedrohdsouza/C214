@@ -8,13 +8,19 @@ function calcularIMC(peso, altura) {
 }
 
 function interpretarIMC(imc) {
-  if (imc < 18.5) {
+  if (imc <= 0) {
+    return 'NaN'; // Retorna "NaN" se a altura for igual a zero
+  }
+  else if (imc > 0 && imc <= 18.5) {
     return "Abaixo do peso";
-  } else if (imc >= 18.5 && imc < 24.9) {
+  } 
+  else if (imc >= 18.5 && imc < 24.9) {
     return "Peso normal";
-  } else if (imc >= 24.9 && imc < 29.9) {
+  } 
+  else if (imc >= 24.9 && imc < 29.9) {
     return "Acima do peso";
-  } else {
+  } 
+  else {
     return "Obeso";
   }
 }

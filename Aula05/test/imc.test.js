@@ -14,8 +14,6 @@ describe('Calculadora de IMC', () => {
     expect(IMCCalculado).to.equal(IMEsperado);
   });
 
-
-
   it('altura = 0, entrada inadequada', () => {
     const peso = 70; // 70 kg
     const altura = 0; // 0 cm
@@ -31,5 +29,13 @@ describe('Calculadora de IMC', () => {
     const IMCInterpretado = interpretarIMC(imc);
 
     expect(IMCInterpretado).to.equal('Peso normal');
+  });
+
+  it('interpreta IMC, com IMC inválido', () => {
+    const imc = -1;
+
+    const IMCInterpretado = interpretarIMC(imc);
+
+    expect(IMCInterpretado).to.equal('NaN');
   });
 });
